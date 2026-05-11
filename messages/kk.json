@@ -9,6 +9,7 @@
   "nav": {
     "cities": "Қалалар",
     "about": "Жоба туралы",
+    "dataSources": "TODO_KZ:Источники данных",
     "github": "GitHub"
   },
   "common": {
@@ -22,10 +23,11 @@
   },
   "home": {
     "eyebrow": "PREMIUM · LIVE TRANSIT",
-    "title": "Қазақстан автобустары нақты уақытта",
+    "title": "TODO_KZ:Автобусы Казахстана — вживую",
     "subtitle": "12 ірі қаладағы бағдарлар, аялдамалар мен көлік қозғалысы — бір картада, әр бірнеше секунд сайын жаңарып отырады.",
     "ctaPrimary": "Картаны ашу",
     "ctaSecondary": "Қаланы таңдау",
+    "featuresTitle": "TODO_KZ:Что внутри",
     "citiesEyebrow": "Іске қосылғанда — 12 қала",
     "citiesTitle": "KZ Buses Live қайда жұмыс істейді",
     "citiesSubtitle": "Алматы мен Астанадан Қызылорда мен Атырауға дейін — әр аялдама, әр бағдар.",
@@ -50,13 +52,21 @@
     "openRoute": "TODO_KZ:Открыть маршрут",
     "mapFallback": "TODO_KZ:Загрузка карты…",
     "sourceLive": "GTFS-Realtime",
-    "sourceSimulated": "TODO_KZ:Серверная симуляция"
+    "sourceSimulated": "TODO_KZ:Серверная симуляция",
+    "searchPlaceholder": "TODO_KZ:Поиск маршрута…",
+    "searchEmpty": "TODO_KZ:Ничего не найдено",
+    "noRoutes": "TODO_KZ:Маршруты не загружены",
+    "noRoutesDescription": "TODO_KZ:Похоже, у этого города пока нет открытых маршрутов в нашей базе.",
+    "backToList": "TODO_KZ:К списку маршрутов",
+    "openStops": "TODO_KZ:Остановки"
   },
   "route": {
     "stopsTitle": "TODO_KZ:Остановки",
     "scheduleTitle": "TODO_KZ:Часы работы",
     "headwayTitle": "TODO_KZ:Интервал",
     "headwayValue": "≈ {minutes} TODO_KZ:мин",
+    "track": "TODO_KZ:Следить",
+    "tracking": "TODO_KZ:Слежу",
     "kind": {
       "bus": "TODO_KZ:Автобус",
       "trolleybus": "TODO_KZ:Троллейбус",
@@ -68,13 +78,30 @@
       "idle": "TODO_KZ:Перерыв",
       "suspended": "TODO_KZ:Приостановлен"
     },
-    "nextStop": "TODO_KZ:Следующая остановка"
+    "nextStop": "TODO_KZ:Следующая остановка",
+    "busesNow": "{count, plural, one {TODO_KZ:Сейчас на маршруте: # автобус} other {TODO_KZ:Сейчас на маршруте: # автобусов}}"
   },
   "about": {
     "title": "TODO_KZ:О проекте",
     "intro": "TODO_KZ:KZ Buses Live — открытый pet-проект про общественный транспорт Казахстана.",
-    "stack": "TODO_KZ:Стек: Next.js 15, TypeScript, MapLibre GL, next-intl, Vercel.",
+    "mission": "TODO_KZ:Цель — собрать на одной карте маршруты и движение автобусов во всех крупных городах страны.",
+    "stackTitle": "TODO_KZ:Стек",
+    "stack": "Next.js 15 · TypeScript · Tailwind v4 · shadcn/ui · Framer Motion · MapLibre GL JS · next-intl · Vercel.",
+    "teamTitle": "TODO_KZ:Команда",
+    "team": "TODO_KZ:Сделано небольшой командой из 5 ролей.",
     "dataSources": "TODO_KZ:Источники данных"
+  },
+  "dataSources": {
+    "title": "TODO_KZ:Источники данных",
+    "intro": "TODO_KZ:Прозрачно показываем откуда берутся маршруты, остановки и live-позиции.",
+    "liveTitle": "TODO_KZ:Live-позиции",
+    "liveBody": "TODO_KZ:Когда у города есть открытый GTFS-Realtime фид — проксируем его. Где фида нет — работает детерминированная серверная симуляция.",
+    "routesTitle": "TODO_KZ:Маршруты и остановки",
+    "routesBody": "TODO_KZ:Кураторская выборка ключевых маршрутов на базе open-data и OpenStreetMap. В фазе 2 — Overpass API.",
+    "mapTitle": "TODO_KZ:Карта",
+    "mapBody": "TODO_KZ:MapTiler Streets-v2 Dark; fallback — OSM-тайлы.",
+    "licenseTitle": "TODO_KZ:Лицензии",
+    "licenseBody": "© OpenStreetMap contributors. MapTiler © MapTiler. Код проекта — open-source."
   },
   "faq": {
     "title": "TODO_KZ:Частые вопросы",

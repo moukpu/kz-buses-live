@@ -42,13 +42,13 @@ pnpm format      # prettier --write .
 
 ## Переменные окружения
 
-| Переменная                  | Где           | Обязательная | Зачем                                                                        |
-| --------------------------- | ------------- | ------------ | ---------------------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`      | client+server | желательно   | Канонический URL для `metadataBase`, sitemap, OG-тегов.                      |
-| `NEXT_PUBLIC_MAPTILER_KEY`  | client        | нет          | MapTiler basemap (премиум-тайлы); без неё — fallback.                        |
-| `UPSTASH_REDIS_REST_URL`    | server        | для prod     | Upstash Redis REST endpoint для `@upstash/ratelimit` (rate-limit на API).    |
-| `UPSTASH_REDIS_REST_TOKEN`  | server        | для prod     | Парный токен к `UPSTASH_REDIS_REST_URL`. Без пары — rate-limit no-op в dev.  |
-| `BUS_FEED_BASE_URL`         | server        | нет          | Upstream GTFS-RT / mock-feed; без неё — симулятор.                           |
+| Переменная                 | Где           | Обязательная | Зачем                                                                       |
+| -------------------------- | ------------- | ------------ | --------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`     | client+server | желательно   | Канонический URL для `metadataBase`, sitemap, OG-тегов.                     |
+| `NEXT_PUBLIC_MAPTILER_KEY` | client        | нет          | MapTiler basemap (премиум-тайлы); без неё — fallback.                       |
+| `UPSTASH_REDIS_REST_URL`   | server        | для prod     | Upstash Redis REST endpoint для `@upstash/ratelimit` (rate-limit на API).   |
+| `UPSTASH_REDIS_REST_TOKEN` | server        | для prod     | Парный токен к `UPSTASH_REDIS_REST_URL`. Без пары — rate-limit no-op в dev. |
+| `BUS_FEED_BASE_URL`        | server        | нет          | Upstream GTFS-RT / mock-feed; без неё — симулятор.                          |
 
 Шаблон — в `.env.example`. В Vercel переменные задаются через дашборд
 **Settings → Environment Variables** для Production и Preview раздельно.

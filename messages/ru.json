@@ -9,6 +9,7 @@
   "nav": {
     "cities": "Города",
     "about": "О проекте",
+    "dataSources": "Источники данных",
     "github": "GitHub"
   },
   "common": {
@@ -22,10 +23,11 @@
   },
   "home": {
     "eyebrow": "PREMIUM · LIVE TRANSIT",
-    "title": "Автобусы Казахстана в реальном времени",
+    "title": "Автобусы Казахстана — вживую",
     "subtitle": "Маршруты, остановки и движение транспорта в 12 крупнейших городах страны — на одной карте, с обновлением каждые несколько секунд.",
     "ctaPrimary": "Открыть карту",
     "ctaSecondary": "Выбрать город",
+    "featuresTitle": "Что внутри",
     "citiesEyebrow": "12 городов на старте",
     "citiesTitle": "Где работает KZ Buses Live",
     "citiesSubtitle": "От Алматы и Астаны до Кызылорды и Атырау — каждая остановка, каждый маршрут.",
@@ -50,13 +52,21 @@
     "openRoute": "Открыть маршрут",
     "mapFallback": "Загрузка карты…",
     "sourceLive": "GTFS-Realtime",
-    "sourceSimulated": "Серверная симуляция"
+    "sourceSimulated": "Серверная симуляция",
+    "searchPlaceholder": "Поиск маршрута…",
+    "searchEmpty": "Ничего не найдено",
+    "noRoutes": "Маршруты не загружены",
+    "noRoutesDescription": "Похоже, у этого города пока нет открытых маршрутов в нашей базе.",
+    "backToList": "К списку маршрутов",
+    "openStops": "Остановки"
   },
   "route": {
     "stopsTitle": "Остановки",
     "scheduleTitle": "Часы работы",
     "headwayTitle": "Интервал",
     "headwayValue": "≈ {minutes} мин",
+    "track": "Следить",
+    "tracking": "Слежу",
     "kind": {
       "bus": "Автобус",
       "trolleybus": "Троллейбус",
@@ -68,13 +78,30 @@
       "idle": "Перерыв",
       "suspended": "Приостановлен"
     },
-    "nextStop": "Следующая остановка"
+    "nextStop": "Следующая остановка",
+    "busesNow": "{count, plural, one {Сейчас на маршруте: # автобус} few {Сейчас на маршруте: # автобуса} other {Сейчас на маршруте: # автобусов}}"
   },
   "about": {
     "title": "О проекте",
     "intro": "KZ Buses Live — открытый pet-проект про общественный транспорт Казахстана.",
-    "stack": "Стек: Next.js 15, TypeScript, MapLibre GL, next-intl, Vercel.",
+    "mission": "Цель — собрать на одной карте маршруты и движение автобусов во всех крупных городах страны, с обновлением в реальном времени там, где это возможно.",
+    "stackTitle": "Стек",
+    "stack": "Next.js 15 (App Router) · TypeScript · Tailwind v4 · shadcn/ui · Framer Motion · MapLibre GL JS · next-intl · Vercel.",
+    "teamTitle": "Команда",
+    "team": "Сделано небольшой командой из 5 ролей: PM, дизайн, фронт, архитектура, инфраструктура.",
     "dataSources": "Источники данных"
+  },
+  "dataSources": {
+    "title": "Источники данных",
+    "intro": "Прозрачно показываем откуда берутся маршруты, остановки и live-позиции.",
+    "liveTitle": "Live-позиции",
+    "liveBody": "Когда у города есть открытый GTFS-Realtime фид — проксируем его (вместе с rate-limit и no-store кэшем). Где фида нет — работает детерминированная серверная симуляция от расписания и геометрии маршрута.",
+    "routesTitle": "Маршруты и остановки",
+    "routesBody": "Сейчас — кураторская выборка ключевых маршрутов на базе open-data и OpenStreetMap relations. В фазе 2 — автоматический импорт через Overpass API.",
+    "mapTitle": "Карта",
+    "mapBody": "MapTiler Streets-v2 Dark при наличии API-ключа; иначе — растровые OSM-тайлы как fallback.",
+    "licenseTitle": "Лицензии",
+    "licenseBody": "© OpenStreetMap contributors. MapTiler © MapTiler. Код проекта — open-source."
   },
   "faq": {
     "title": "Частые вопросы",
