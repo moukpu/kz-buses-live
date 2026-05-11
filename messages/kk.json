@@ -11,6 +11,15 @@
     "about": "Жоба туралы",
     "github": "GitHub"
   },
+  "common": {
+    "loading": "TODO_KZ:Загрузка…",
+    "error": "TODO_KZ:Не удалось загрузить данные",
+    "retry": "TODO_KZ:Повторить",
+    "openMap": "TODO_KZ:Открыть карту",
+    "backToHome": "TODO_KZ:На главную",
+    "backToCity": "TODO_KZ:К городу",
+    "minutesShort": "TODO_KZ:мин"
+  },
   "home": {
     "eyebrow": "PREMIUM · LIVE TRANSIT",
     "title": "Қазақстан автобустары нақты уақытта",
@@ -32,6 +41,57 @@
       "live": "live",
       "soon": "көп ұзамай"
     }
+  },
+  "city": {
+    "routesTitle": "TODO_KZ:Маршруты",
+    "routesCount": "{count, plural, one {# TODO_KZ:маршрут} other {# TODO_KZ:маршрутов}}",
+    "stopsCount": "{count, plural, one {# TODO_KZ:остановка} other {# TODO_KZ:остановок}}",
+    "busesOnline": "{count, plural, one {# TODO_KZ:автобус онлайн} other {# TODO_KZ:автобусов онлайн}}",
+    "openRoute": "TODO_KZ:Открыть маршрут",
+    "mapFallback": "TODO_KZ:Загрузка карты…",
+    "sourceLive": "GTFS-Realtime",
+    "sourceSimulated": "TODO_KZ:Серверная симуляция"
+  },
+  "route": {
+    "stopsTitle": "TODO_KZ:Остановки",
+    "scheduleTitle": "TODO_KZ:Часы работы",
+    "headwayTitle": "TODO_KZ:Интервал",
+    "headwayValue": "≈ {minutes} TODO_KZ:мин",
+    "kind": {
+      "bus": "TODO_KZ:Автобус",
+      "trolleybus": "TODO_KZ:Троллейбус",
+      "minibus": "TODO_KZ:Маршрутка",
+      "tram": "TODO_KZ:Трамвай"
+    },
+    "status": {
+      "operating": "TODO_KZ:В движении",
+      "idle": "TODO_KZ:Перерыв",
+      "suspended": "TODO_KZ:Приостановлен"
+    },
+    "nextStop": "TODO_KZ:Следующая остановка"
+  },
+  "about": {
+    "title": "TODO_KZ:О проекте",
+    "intro": "TODO_KZ:KZ Buses Live — открытый pet-проект про общественный транспорт Казахстана.",
+    "stack": "TODO_KZ:Стек: Next.js 15, TypeScript, MapLibre GL, next-intl, Vercel.",
+    "dataSources": "TODO_KZ:Источники данных"
+  },
+  "faq": {
+    "title": "TODO_KZ:Частые вопросы",
+    "items": [
+      {
+        "q": "TODO_KZ:Это настоящие данные?",
+        "a": "TODO_KZ:Когда у города есть открытый GTFS-Realtime — да. В остальных случаях работает реалистичная серверная симуляция от расписания и геометрии маршрутов."
+      },
+      {
+        "q": "TODO_KZ:Какие города поддерживаются?",
+        "a": "TODO_KZ:12 крупнейших: Алматы, Астана, Шымкент, Караганда, Актобе, Тараз, Павлодар, Усть-Каменогорск, Семей, Атырау, Костанай, Кызылорда."
+      },
+      {
+        "q": "TODO_KZ:Можно ли встроить карту?",
+        "a": "TODO_KZ:В будущем — да. Сейчас проект в фазе MVP, embed-API появится после стабилизации."
+      }
+    ]
   },
   "footer": {
     "tagline": "Қазақстанның қоғамдық көлігі туралы ашық жоба",
