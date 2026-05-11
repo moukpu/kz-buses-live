@@ -1,0 +1,236 @@
+/* ============================================================================
+   kz-buses-live · Design Tokens
+   ----------------------------------------------------------------------------
+   Single source of truth for color, typography, spacing, radius, shadows
+   and motion. All values OKLCH. Dark theme is primary (`:root`); light is
+   an opt-in override via `[data-theme="light"]`. Shadcn primitives consume
+   the *-foreground / --background / --primary / --ring / --border / --input
+   triad — those are kept as semantic aliases pointing at the palette below.
+
+   Naming convention:
+     palette  →  --bg, --surface, --surface-2, --text, --text-muted, --border…
+     intent   →  --accent, --accent-fg, --live, --delayed, --offline, --danger
+     shadcn   →  --background, --foreground, --primary, --secondary, --muted,
+                 --accent (hover surface), --destructive, --ring, --input…
+============================================================================ */
+
+:root {
+  color-scheme: dark;
+
+  /* ----- Brand palette (dark · primary) -------------------------------- */
+  --bg: oklch(14% 0.02 250);
+  --bg-elevated: oklch(17% 0.02 250);
+  --surface: oklch(20% 0.02 250);
+  --surface-2: oklch(25% 0.02 250);
+  --surface-3: oklch(30% 0.02 250);
+
+  --text: oklch(96% 0.01 250);
+  --text-muted: oklch(72% 0.02 250);
+  --text-subtle: oklch(55% 0.02 250);
+  --text-on-accent: oklch(14% 0.02 250);
+
+  --border: oklch(30% 0.02 250 / 0.55);
+  --border-strong: oklch(45% 0.02 250 / 0.75);
+
+  /* ----- Intent (accent, statuses) ------------------------------------- */
+  /* Electric teal — primary brand accent (CTA / live UI). */
+  --accent: oklch(72% 0.15 220);
+  --accent-hover: oklch(78% 0.15 220);
+  --accent-fg: oklch(14% 0.02 250);
+  --accent-soft: oklch(72% 0.15 220 / 0.16);
+  --accent-glow: oklch(72% 0.15 220 / 0.35);
+
+  /* Bus statuses (see `<BusMarker>` / `<LiveDot>` / `<RouteCard>`). */
+  --live: oklch(74% 0.18 150);
+  --live-soft: oklch(74% 0.18 150 / 0.18);
+  --delayed: oklch(80% 0.16 75);
+  --delayed-soft: oklch(80% 0.16 75 / 0.18);
+  --offline: oklch(58% 0.02 250);
+  --offline-soft: oklch(58% 0.02 250 / 0.18);
+  --danger: oklch(65% 0.21 27);
+  --danger-soft: oklch(65% 0.21 27 / 0.18);
+  --info: oklch(72% 0.15 220);
+
+  /* ----- Typography ---------------------------------------------------- */
+  /* Variables `--font-display` / `--font-body` / `--font-mono` come from
+     `src/styles/fonts.ts` via `next/font`. Fallback chains below cover
+     SSR before hydration and the rare case fonts.ts isn't wired in yet. */
+  --font-display:
+    var(--font-unbounded), "Unbounded", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    sans-serif;
+  --font-body:
+    var(--font-inter), "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    sans-serif;
+  --font-mono:
+    var(--font-jbmono), "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --leading-tight: 1.1;
+  --leading-snug: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  --tracking-tight: -0.02em;
+  --tracking-snug: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+
+  /* ----- Spacing (4 px base) ------------------------------------------- */
+  --space-0: 0;
+  --space-1: 0.25rem; /*  4px */
+  --space-2: 0.5rem; /*  8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem; /* 48px */
+  --space-16: 4rem; /* 64px */
+  --space-20: 5rem; /* 80px */
+  --space-24: 6rem; /* 96px */
+
+  /* ----- Radius -------------------------------------------------------- */
+  --radius: 0.75rem; /* 12px — default for cards / buttons */
+  --radius-xs: 0.25rem; /*  4px */
+  --radius-sm: 0.5rem; /*  8px */
+  --radius-md: 0.75rem; /* 12px */
+  --radius-lg: 1.25rem; /* 20px */
+  --radius-xl: 1.75rem; /* 28px */
+  --radius-2xl: 2.5rem; /* 40px — bottom-sheet handle */
+  --radius-full: 9999px;
+
+  /* ----- Elevation (shadows tuned to dark surface) --------------------- */
+  --shadow-xs: 0 1px 2px oklch(0% 0 0 / 0.35);
+  --shadow-sm: 0 1px 2px oklch(0% 0 0 / 0.35), 0 2px 6px -2px oklch(0% 0 0 / 0.3);
+  --shadow-md: 0 4px 12px -2px oklch(0% 0 0 / 0.4), 0 2px 4px -2px oklch(0% 0 0 / 0.3);
+  --shadow-lg: 0 18px 40px -12px oklch(0% 0 0 / 0.55), 0 4px 12px -4px oklch(0% 0 0 / 0.35);
+  --shadow-xl: 0 32px 80px -20px oklch(0% 0 0 / 0.7), 0 8px 24px -8px oklch(0% 0 0 / 0.4);
+  --shadow-glow: 0 0 32px var(--accent-glow);
+  --shadow-inset: inset 0 1px 0 oklch(100% 0 0 / 0.05);
+
+  /* ----- Motion (paired with Framer Motion in `src/styles/motion.ts`) - */
+  --d-instant: 80ms;
+  --d-fast: 140ms;
+  --d-base: 220ms;
+  --d-slow: 360ms;
+  --d-slower: 560ms;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-emph: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1); /* iOS-like */
+
+  /* ----- Z-index (named layers) ---------------------------------------- */
+  --z-base: 1;
+  --z-map: 10;
+  --z-route-list: 20;
+  --z-bottom-sheet: 40;
+  --z-header: 50;
+  --z-modal: 60;
+  --z-toast: 70;
+  --z-tooltip: 80;
+
+  /* ----- Layout (split-screen city view, sheet drag handle) ------------ */
+  --route-list-width: 380px;
+  --route-list-width-lg: 420px;
+  --header-h: 64px;
+  --bottom-sheet-handle-h: 28px;
+
+  /* ============================================================
+     Shadcn-compatible semantic aliases. shadcn primitives reference
+     these names directly — keep them mapped to the brand palette so
+     swapping the palette here propagates to every UI component.
+     ============================================================ */
+  --background: var(--bg);
+  --foreground: var(--text);
+
+  --card: var(--surface);
+  --card-foreground: var(--text);
+
+  --popover: var(--surface-2);
+  --popover-foreground: var(--text);
+
+  --primary: var(--accent);
+  --primary-foreground: var(--accent-fg);
+
+  --secondary: var(--surface-2);
+  --secondary-foreground: var(--text);
+
+  --muted: var(--surface);
+  --muted-foreground: var(--text-muted);
+
+  /* shadcn `--accent` is the hover-state surface (e.g. dropdown row
+     under cursor) — not our brand accent. Keep them separated. */
+  --accent-shadcn: var(--surface-3);
+  --accent-shadcn-foreground: var(--text);
+
+  --destructive: var(--danger);
+  --destructive-foreground: var(--text);
+
+  --border-shadcn: var(--border);
+  --input: var(--border);
+  --ring: oklch(72% 0.15 220 / 0.55);
+}
+
+/* ============================================================================
+   Light theme (opt-in, secondary). Activated by:
+     <html data-theme="light"> or <body data-theme="light">
+   Dark remains the default; light is provided so the experience stays
+   usable in well-lit indoor settings for older audiences.
+============================================================================ */
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: oklch(98% 0.005 250);
+  --bg-elevated: oklch(100% 0 0);
+  --surface: oklch(96% 0.006 250);
+  --surface-2: oklch(93% 0.008 250);
+  --surface-3: oklch(89% 0.01 250);
+
+  --text: oklch(20% 0.02 250);
+  --text-muted: oklch(45% 0.02 250);
+  --text-subtle: oklch(58% 0.02 250);
+  --text-on-accent: oklch(98% 0.005 250);
+
+  --border: oklch(86% 0.008 250 / 0.85);
+  --border-strong: oklch(72% 0.01 250 / 0.9);
+
+  --accent: oklch(55% 0.16 220);
+  --accent-hover: oklch(48% 0.16 220);
+  --accent-fg: oklch(98% 0.005 250);
+  --accent-soft: oklch(55% 0.16 220 / 0.12);
+  --accent-glow: oklch(55% 0.16 220 / 0.25);
+
+  --live: oklch(56% 0.18 150);
+  --live-soft: oklch(56% 0.18 150 / 0.14);
+  --delayed: oklch(64% 0.18 70);
+  --delayed-soft: oklch(64% 0.18 70 / 0.14);
+  --offline: oklch(55% 0.02 250);
+  --offline-soft: oklch(55% 0.02 250 / 0.14);
+  --danger: oklch(55% 0.22 27);
+  --danger-soft: oklch(55% 0.22 27 / 0.14);
+
+  --shadow-xs: 0 1px 2px oklch(20% 0.02 250 / 0.08);
+  --shadow-sm: 0 1px 2px oklch(20% 0.02 250 / 0.06), 0 2px 6px -2px oklch(20% 0.02 250 / 0.08);
+  --shadow-md: 0 4px 12px -2px oklch(20% 0.02 250 / 0.1), 0 2px 4px -2px oklch(20% 0.02 250 / 0.06);
+  --shadow-lg:
+    0 18px 40px -12px oklch(20% 0.02 250 / 0.18), 0 4px 12px -4px oklch(20% 0.02 250 / 0.1);
+  --shadow-xl:
+    0 32px 80px -20px oklch(20% 0.02 250 / 0.22), 0 8px 24px -8px oklch(20% 0.02 250 / 0.12);
+  --shadow-inset: inset 0 1px 0 oklch(100% 0 0 / 0.6);
+
+  --ring: oklch(55% 0.16 220 / 0.5);
+}
+
+/* ============================================================================
+   Reduced motion. Respect OS-level preference globally.
+============================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --d-instant: 1ms;
+    --d-fast: 1ms;
+    --d-base: 1ms;
+    --d-slow: 1ms;
+    --d-slower: 1ms;
+  }
+}
